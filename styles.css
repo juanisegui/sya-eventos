@@ -1,0 +1,146 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: auto; /* Permite el desplazamiento si es necesario */
+}
+
+body {
+    background: linear-gradient(to bottom right, #a8dba8, #5aaf5a); /* Fondo degradado principal */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    /* position: relative; */
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+}
+
+/* Agrega formas geométricas al fondo */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2) 20%, transparent 21%),
+                radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.2) 20%, transparent 21%),
+                radial-gradient(circle at 10% 70%, rgba(255, 255, 255, 0.2) 20%, transparent 21%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.2) 20%, transparent 21%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 30%, transparent 31%),
+                radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.2) 25%, transparent 26%),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.2) 15%, transparent 16%);
+    /* background-size: 200px 200px; */
+    z-index: -1; /* Coloca el fondo detrás del contenido */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Mantiene el contenedor en el flujo de la página */
+    min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la ventana */
+    background: transparent; /* Asegura que el contenedor no tenga fondo que sobrescriba el fondo de la página */
+}
+
+.logo {
+    max-width: 250px; /* Aumenta el tamaño máximo de la imagen */
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil para darle profundidad */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    transition: transform 0.3s ease; /* Transición suave para efectos de hover */
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el cursor */
+}
+
+
+.btn-primary {
+    background-color: #006400;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #004d00;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.event-list {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con un poco de transparencia para diferenciar del fondo principal */
+    color: #000;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-height: 400px; /* Ajusta la altura según sea necesario */
+    overflow-y: auto; /* Añade scrollbar vertical */
+}
+
+.event-list h3 {
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    background-color: #f9f9f9;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+    padding-left: 30px; /* Ajusta el espacio para el check */
+    font-size: 14px; /* Ajusta el tamaño del texto si es necesario */
+}
+
+.list-group-item.completed::before {
+    content: '\2714'; /* Carácter Unicode para el check */
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px; /* Tamaño más pequeño del ícono de check */
+    color: #28a745; /* Color del check */
+}
+
+.event-actions {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.event-actions button {
+    margin-left: 5px;
+}
+
+h2 {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente a tu preferencia */
+    font-size: 2.5em; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    color: #2E8B57; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+    background: linear-gradient(to right, #a8e063, #56ab2f); /* Degradado de fondo */
+    -webkit-background-clip: text; /* Solo colorea el texto */
+    color: transparent; /* Hace el texto transparente para mostrar el degradado */
+    padding: 10px; /* Espaciado interior */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra de caja */
+    -webkit-text-stroke: #000;
+    -webkit-text-stroke-width: 0.7px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist de Eventos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
+</head>
+<body>
+    <div class="container">
+        <header class="text-center my-3">
+            <img src="logo.png" alt="Logo de la Empresa" class="img-fluid logo">
+        </header>
+        <div class="text-center mb-3">
+            <h2>Salud y Ambiente Eventos 2024</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form id="event-form" class="mb-3">
+                    <div class="form-group">
+                        <input type="date" id="event-date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="event-name" class="form-control" placeholder="Nombre del evento" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="event-description" class="form-control" placeholder="Descripción (opcional)" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="event-participants" class="form-control" placeholder="Participantes (separados por comas)">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar Evento</button>
+                </form>
+                <div class="text-center mb-3">
+                    <button id="show-all" class="btn btn-info">Ver Todos</button>
+                    <button id="show-completed" class="btn btn-success">Ver Completados</button>
+                </div>
+                <div id="event-list" class="event-list">
+                    <h3>Lista de Eventos</h3>
+                    <ul id="events" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer con botones de exportar e importar -->
+    <footer class="text-center mt-4">
+        <button id="export-events" class="btn btn-warning">Exportar Eventos</button>
+        <button id="import-events" class="btn btn-secondary">Importar Eventos</button>
+        <input type="file" id="import-file" style="display: none;" accept=".json">
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
